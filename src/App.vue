@@ -1,9 +1,16 @@
 <script setup>
-
+import { ref } from 'vue';
 import BaseLayout from './components/BaseLayout.vue';
 import Categories from './components/Categories.vue';
 import CardSection from './components/CardSection.vue';
+import * as filter from './filter.js';
 
+const displayedItems = ref(filter.allItems());
+
+
+function filterByCategory(category) {
+  displayedItems.value = filter.byCategory(category); 
+}
 </script>
 
 <template>
@@ -12,10 +19,10 @@ import CardSection from './components/CardSection.vue';
     <div class="title">
         <h1>Design Hub</h1>
     </div>
-    <Categories />
+    <Categories @filterByCategory="filterByCategory" />
   </header>
   <main >
-    <CardSection />
+    <CardSection :items="displayedItems" />
   </main>
   <footer class="footer">
     <span>

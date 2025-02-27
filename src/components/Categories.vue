@@ -1,16 +1,19 @@
 <script setup>
 import categories from '@/Categories.js';
 
+const emit = defineEmits(['filterByCategory'])
+
 </script>
 
 <template>
 <nav>
     <div class="List">
         <button
+        @click="emit('filterByCategory', item)"
         class="ItemList"
-        v-for="category in Object.keys(categories)"
+        v-for="item in Object.keys(categories)"
         >
-            {{ category }}
+            {{ item }}
         </button>
     </div>
 </nav>

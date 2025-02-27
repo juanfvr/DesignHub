@@ -1,24 +1,36 @@
 <script setup>
-import * as filterBy from '@/filter.js'
-// import categories from '@/Categories';
+defineProps(['items'])
 
 function acess(link) {
     window.open(link)
 }
+
 </script>
 
 <template>
-    <section class="card" v-for="item in filterBy.allItems()">
-        <div class="card-header" >
-            <div class="ToolIcon">
-                <img class="icon" :src="item.icon" alt="">
+    <section 
+    class="card" 
+    v-for="item in items">
+        <div 
+        class="card-header" >
+            <div 
+            class="ToolIcon">
+                <img 
+                class="icon" 
+                :src="item.icon" alt="">
             </div>
-            <div class="ToolName">
-                <span>{{ item.nome }}</span>
+            <div 
+            class="ToolName">
+                <span>
+                    {{ item.nome }}
+                </span>
             </div>
         </div>
         <CardHeader />
-        <button @click="acess(item.link)" class="button">Acessar</button>
+        <button 
+        @click="acess(item.link)" 
+        class="button">Acessar
+        </button>
     </section>
 </template>
 

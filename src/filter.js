@@ -4,6 +4,6 @@ export function allItems() {
     return Object.values(categories).flat()
 }
 
-export function getByCategory(targetCategory) {
+export function byCategory(targetCategory) {
     return categories[targetCategory]
-  }
+}
