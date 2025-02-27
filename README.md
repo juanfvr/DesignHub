@@ -12,7 +12,7 @@ Página com ferramentas gratuitas para designers de todos os tipos.
 ```bash
 git clone https://github.com/juanfvr/FormularioReativo
 
-cd FormularioReativo
+cd DesignHub
 
 npm install
 
